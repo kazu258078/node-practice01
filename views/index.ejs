@@ -5,7 +5,27 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <header>
+      <h1><%= title %></h1>
+    </header>
+    <div role="main">
+      <h2>Welcome to <%= login.name %></h2>
+      <form method="post" action="/">
+       <P>
+        <input type="text" name="msg" size="50">
+        <input type="submit" value="submit">
+       </P>
+      </form>
+      <hr>
+      <P>
+        <table style="width:95%">
+          <% for(var i in collection){ %>
+            <% - include('data_item',{val:collection[i]}) %>
+          <% } %>
+        </table>
+      </P>
+      <P>
+      </P>
+    </div>
   </body>
 </html>
