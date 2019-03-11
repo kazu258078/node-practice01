@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <header>
+      <h1><%= title %></h1>
+    </header>
+    <div role="main">
+      <p><%- content %></p>
+      <form method="post" action="/users/add">
+        <table>
+          <tr>
+            <th>NAME</th>
+            <td><input type="text" name="name" value="<%= form.name %>"></td>
+          </tr>
+          <tr>
+            <th>PASSWORD</th>
+            <td><input type="password" name="password" value="<%= form.password %>"></td>
+          </tr>
+          <tr>
+            <th>COMMENT</th>
+            <td><input type="text" name="name" value="<%= form.name%>"></td>
+          </tr>
+          <tr>
+            <th>NAME</th>
+            <td><textarea name="comment"><%= form.comment%></textarea></td>
+          </tr>
+          <tr>
+            <th></th>
+            <td><input type="submit" value="create"></td>
+          </tr>
+         </table>
+      </form>
+    </div>
+  </body>
+</html>
