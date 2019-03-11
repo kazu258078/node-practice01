@@ -18,14 +18,26 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(validator());
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+var session_opt = {
+  secret:'keyboard cat',
+  resave:false,
+  saveUninitialized: false,
+  cookie:{maxAge:60*60*1000}
+};
+
+app.use(session(session_opt));
+
+
+app.use('/', index);
+app.use('/users', users);
+app.use('/home', home);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
