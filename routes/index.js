@@ -44,7 +44,7 @@ router.get('/:page', function(req, res, next) {
     pg=1;
   }
   new Message().orderBy('created_at','DESC')
-    .fetchPage({page:pg,pageSize:10,withRelated:['users']})
+    .fetchPage({page:pg,pageSize:10,withRelated:['user']})
     .then((collection)=>{
       var data ={
         title:'miniboard',
