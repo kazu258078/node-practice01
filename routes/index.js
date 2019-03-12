@@ -33,13 +33,13 @@ router.get('/', function(req, res, next) {
   }
 });
 
-router.get('/', function(req, res, next) {
+router.get('/:page', function(req, res, next) {
    if(req.session.login == null){
     res.redirect('/users');
      return;
   }
-  
-  var pg*=1;
+  var pg = req.params.page;
+  pg *=1;
   if(pg < 1){
     pg=1;
   }
