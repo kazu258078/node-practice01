@@ -85,7 +85,7 @@ router.post('/', (req,res,next) => {
       var nm = req.body.name;
       var pw = req.body.password;
       console.log('----------------------------'+ nm + pw +'-----------------------------');
-      new User.query({where:{name:nm}, andwhere: {password:pw}})
+      new User().query({where:{name:nm}, andwhere: {password:pw}})
           .fetch()
           .then((model) => {
             if(model == null){
