@@ -41,7 +41,7 @@ router.post('/add',(req,res,next) => {
       var data = {
         title:'Users/Add',
         content:content,
-        form.req.body
+        form:req.body
       }
       res.render('users/add',data);
     }else{
