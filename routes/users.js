@@ -89,6 +89,7 @@ router.post('/', (req,res,next) => {
           .fetch()
           .then((model) => {
             if(model == null){
+              console.log('---------------Null-------------'+model+'-----------------------------');
               var data = {
                 title:'Please enter again',
                 content:'<p class="error">name or password is invalid</p>',
@@ -96,6 +97,7 @@ router.post('/', (req,res,next) => {
               };
               res.render('users/login',data)
             }else{
+              console.log('----------------------------'+model+'-----------------------------');
               req.session.login = model.attributes; 
               var data = {
                 title:'Users/Login',
