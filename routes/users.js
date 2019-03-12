@@ -76,7 +76,7 @@ router.post('/', (req,res,next) => {
       var data = {
         title:'Users/Login',
         content:content,
-        form.req.body
+        form:req.body
       }
       res.render('users/login',data);
     }else{
