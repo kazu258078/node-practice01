@@ -33,9 +33,8 @@ var session_opt = {
 
 app.use(session(session_opt));
 
-
-app.use('/', index);
 app.use('/users', users);
+app.use('/', index);
 app.use('/home', home);
 
 
