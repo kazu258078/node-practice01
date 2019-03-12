@@ -25,14 +25,14 @@
         </table>
       </P>
       <P>
-        <% if(pagenation.page > 1){ %>
-          <span><a href="/<%= pagenation.page - 1 %>">&lt;&lt; prev</a></span>
+        <% if(pagination.page > 1){ %>
+          <span><a href="/<%= pagination.page - 1 %>">&lt;&lt; prev</a></span>
         <% }else{ %>
           <span>&lt;&lt; prev</span>
         <% } %>
         |
-        <% if(pagenation.page < pagenation.pageCount ){ %>
-          <span><a href="/<%= pagenation.page + 1 %>">Next &gt;&gt;</a></span>
+        <% if(pagination.page < pagination.pageCount ){ %>
+          <span><a href="/<%= pagination.page + 1 %>">Next &gt;&gt;</a></span>
         <% }else{ %>
           <span>Next &gt;&gt;</span>
         <% } %>
