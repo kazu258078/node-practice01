@@ -63,7 +63,47 @@ router.get('/', (req,res,next) => {
 });
 
 router.post('/', (req,res,next) => {
-
+  req.check('name','Please enter name').notEmpty();
+  req.check('password','Please enter password').notEmpty();
+  req.getValidationResult().then((result)=>{
+    if(!result.isEmpty()){
+      var content = '<ul class="error">';
+      var result_arr = result.array();
+      for(var n in result_arr){
+        content += '<li>' + result_arr[n].msg + '</li>'
+      }
+      content += '</ul>';
+      var data = {
+        title:'Users/Login',
+        content:content,
+        form.req.body
+      }
+      res.render('users/login',data);
+    }else{
+      var nm = req.body.name;
+      var pw = req.body.password;
+      User.query({where:{name:nm}, andwhere: {password:pw}})
+          .fetch()
+          .then((model) => {
+            if(model == null){
+              var data = {
+                title:'Please enter again',
+                content:'<p class="error">name or password is invalid</p>',
+                form:req.body
+              };
+              res.render('users/login',data)
+            }else{
+              req.session.login = model.attributes; 
+              var data = {
+                title:'Users/Login',
+                content:'<p>Logined!<br>Please go ba back to top page and submit the message',
+                form:req.body
+              };
+              res.render('users/login',data);
+            }
+          });
+    }
+  });
 });
 
 
