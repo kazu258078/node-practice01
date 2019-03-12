@@ -61,3 +61,6 @@ router.get('/:id/:page',(req,res,next)=>{
    });
   
 });
+
+
+module.exports = router;
