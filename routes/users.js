@@ -67,6 +67,7 @@ router.post('/', (req,res,next) => {
   req.check('name','Please enter name').notEmpty();
   req.check('password','Please enter password').notEmpty();
   req.getValidationResult().then((result)=>{
+    console.log('----------------------------'+ result +'-----------------------------');
     if(!result.isEmpty()){
       var content = '<ul class="error">';
       var result_arr = result.array();
@@ -83,6 +84,7 @@ router.post('/', (req,res,next) => {
     }else{
       var nm = req.body.name;
       var pw = req.body.password;
+      console.log('----------------------------'+ nm + pw +'-----------------------------');
       User.query({where:{name:nm}, andwhere: {password:pw}})
           .fetch()
           .then((model) => {
