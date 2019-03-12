@@ -3,13 +3,14 @@ var router = express.Router();
 
 var knex = require('knex')({
   dialect:'mysql',
-  connection:{
+  /*connection:{
     host:process.env.database_host,
     user:process.env.database_user,
     password:process.env.database_password,
     database:process.env.database_schema,
     charset:'utf8'
-  }
+  }*/
+  connection:process.env.CLEARDB_DATABASE_URL
 });
 
 var Bookshelf = require('bookshelf')(knex);
