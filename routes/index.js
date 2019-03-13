@@ -46,7 +46,7 @@ router.get('/:page', function(req, res, next) {
   new Message().orderBy('created_at','DESC')
     .fetchPage({page:pg,pageSize:10,withRelated:['user']})
     .then((collection)=>{
-      console.log('----------------------------'+ collection +'--------------------------------');
+      console.log('-----------collection-----------------'+ collection.toArray() +'--------------------------------');
       var data ={
         title:'miniboard',
         login:req.session.login,
