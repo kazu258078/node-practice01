@@ -31,6 +31,10 @@
           <span>&lt;&lt; prev</span>
         <% } %>
         |
+        <% for(var i = 1; i < pagination.pageCount; i++;)%>
+          <span>i</span>
+        <% } %>
+        |
         <% if(pagination.page < pagination.pageCount ){ %>
           <span><a href="/<%= pagination.page + 1 %>">Next &gt;&gt;</a></span>
         <% }else{ %>
