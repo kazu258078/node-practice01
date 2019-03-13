@@ -51,3 +51,7 @@ table tr td{
 .error{
   color:red;
 }
+
+.logout{
+  float:right;
+}
