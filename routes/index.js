@@ -60,8 +60,8 @@ router.get('/:page', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
+  console.log('-----------message-----------------'+ req.body.msg +'--------------------------------');
   var rec ={
-    console.log('-----------message-----------------'+ req.body.msg +'--------------------------------');
     message:req.body.msg,
     user_id:req.session.login.id
   }
