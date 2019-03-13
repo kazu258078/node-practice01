@@ -99,12 +99,13 @@ router.post('/', (req,res,next) => {
             }else{
               console.log('----------------------------'+model+'-----------------------------');
               req.session.login = model.attributes; 
-              var data = {
+              /*var data = {
                 title:'Users/Login',
                 content:'<p>Logined!<br>Please go ba back to top page and submit the message',
                 form:req.body
               };
-              res.render('users/login',data);
+              res.render('users/login',data);*/
+              res.redirect('/1');
             }
           });
     }
