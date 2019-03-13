@@ -66,14 +66,16 @@
             Are you sure you will log out?
           </div>
           <div class="modal-footer">
-          <form method="get" action="/logout">
-            <button type="submit" class="btn btn-primary" data-dismiss="modal">Yes</button>
-          </form>
-            <!--<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="location.href='/logout'">Yes</button>-->
+            <button type="button" class="btn btn-primary" data-dismiss="modal" id="logout">Yes</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
           </div>
         </div>
       </div>
     </div>
   </body>
+  <script>
+  $("#logout").click(function(){
+    window.location.href = "/logout";
+  });
+  </script>
 </html>
