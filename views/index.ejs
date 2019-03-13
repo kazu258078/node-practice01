@@ -67,7 +67,10 @@
             Are you sure you will log out?
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="location.href='/logout'">Yes</button>
+          <form method="get" action="/logout">
+            <button type="submit">Yes</button>
+          </form>
+            /*<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="location.href='/logout'">Yes</button>*/
             <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
           </div>
         </div>
