@@ -31,8 +31,9 @@
           <span>&lt;&lt; prev</span>
         <% } %>
         |
-        <% for(i=1; i < pagination.pageCount; i++;){ %>
-          <span><%= i %></span>
+        <% for(var i=1; i < pagination.pageCount; i++){ %>
+          <% var span += "<span>"+<%= i %>+"</span> "; %>
+          <%= span %>
         <% } %>
         |
         <% if(pagination.page < pagination.pageCount ){ %>
