@@ -31,7 +31,11 @@ p{
 }
 
 table{
-  margin: 20px;
+     margin: 20px;
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: grey;
 }
 
 table tr th{
