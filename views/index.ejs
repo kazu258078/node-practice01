@@ -31,9 +31,9 @@
           <span>&lt;&lt; prev</span>
         <% } %>
         |
-        <% var span ="<span>1</span>"; %>
+        <% var span = "<span><a href='/1'>1</a></span>"; %>
         <% for(var i=2; i < pagination.pageCount; i++){ %>
-           <% span += "<span><a href="/"+i>"+i+"</a></span>"  %>
+           <% span += "<span><a href='/'+i>"+i+"</a></span>"  %>
         <% } %>
         <%- span %>
         |
