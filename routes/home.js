@@ -51,6 +51,7 @@ router.get('/:id/:page',(req,res,next)=>{
                 var data = {
                   title:'miniboard',
                   login:req.session.login,
+                  user_id:id,
                   collection:collection.toArray(),
                   pagination:collection.pagination
                 }
