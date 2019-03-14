@@ -34,6 +34,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/:page', function(req, res, next) {
+  console.log('-----------page-----------------'+ req.params.page +'--------------------------------');
    if(req.session.login == null){
     res.redirect('/users');
      return;
