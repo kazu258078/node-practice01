@@ -74,8 +74,15 @@
     </div>
   </body>
   <script>
+  
+ 
   $("#logout").click(function(){
-    window.location.href = "/logout";
+   $.ajax({
+      url:'/logout',
+      success:function(result){
+        return true;
+      }
+    });
   });
   </script>
 </html>
