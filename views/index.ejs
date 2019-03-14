@@ -77,12 +77,7 @@
   
  
   $("#logout").click(function(){
-   $.ajax({
-      url:'/api/logout',
-      success:function(result){
-        return true;
-      }
-    });
+   window.location.href = "/api/logout";
   });
   </script>
 </html>
