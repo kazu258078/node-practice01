@@ -71,7 +71,7 @@ router.post('/', function(req, res, next) {
   })
 });
 
-router.get('/logout',(req,res,next)=>{
+router.get('/api/logout',(req,res,next)=>{
   console.log('-----------session.destroy-----------------');
   req.session.destroy();
   res.end();
