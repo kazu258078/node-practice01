@@ -74,7 +74,13 @@ router.post('/', function(req, res, next) {
 router.get('/api/logout',(req,res,next)=>{
   console.log('-----------session.destroy-----------------');
   req.session.destroy();
-  res.redirect('/');
+  //res.redirect('/');
+  var data = {
+    title:'You are Logged Out',
+    form:{name:'',password:''},
+    content:'* Please input name and password'
+  }
+  res.render('users/login',data);
 });
 
 
