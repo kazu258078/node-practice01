@@ -97,7 +97,7 @@ router.post('/', (req,res,next) => {
               };
               res.render('users/login',data)
             }else{
-              console.log('----------------------------'+model.attributes+'-----------------------------');
+              console.log(model);
               req.session.login = model.attributes; 
               console.log(req.session.login);
               /*var data = {
