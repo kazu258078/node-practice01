@@ -99,7 +99,7 @@ router.post('/', (req,res,next) => {
             }else{
               console.log('----------------------------'+model.attributes+'-----------------------------');
               req.session.login = model.attributes; 
-              console.log(req.session.login);
+              //console.log(req.session.login);
               /*var data = {
                 title:'Users/Login',
                 content:'<p>Logined!<br>Please go ba back to top page and submit the message',
